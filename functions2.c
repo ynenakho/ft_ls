@@ -6,15 +6,15 @@
 /*   By: ynenakho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/13 15:28:15 by ynenakho          #+#    #+#             */
-/*   Updated: 2018/04/13 15:28:18 by ynenakho         ###   ########.fr       */
+/*   Updated: 2018/04/13 23:33:08 by ynenakho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-t_flist		*pop_elem(t_flist **root)
+t_flist	*pop_elem(t_flist **root)
 {
-	t_flist		*result;
+	t_flist *result;
 
 	if (!(*root))
 		return (NULL);
@@ -23,18 +23,18 @@ t_flist		*pop_elem(t_flist **root)
 	return (result);
 }
 
-char *ft_getgrgid(gid_t st_gid)
+char	*ft_getgrgid(gid_t st_gid)
 {
-  struct group *gid;
+	struct group *gid;
 
-  gid = getgrgid(st_gid);
-  return(gid->gr_name);
+	gid = getgrgid(st_gid);
+	return (gid->gr_name);
 }
 
-char *ft_getpwuid(uid_t st_uid)
+char	*ft_getpwuid(uid_t st_uid)
 {
-  struct passwd *uid;
+	struct passwd *uid;
 
-  uid = getpwuid(st_uid);
-  return(uid->pw_name);
+	uid = getpwuid(st_uid);
+	return (uid->pw_name);
 }
